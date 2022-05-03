@@ -1,0 +1,45 @@
+.footer-row{
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-between;
+    } 
+.orange{
+    color: palevioletred;
+    margin-bottom: 10px;
+}
+.mail{
+    margin:50px 0px;
+}
+#footer-buton{
+    margin-top: 20px;
+}
+.product{
+    
+    font-weight: bolder;
+   
+}
+.product p{
+ line-height: 30px;
+}
+/* footer section end */
+
+/* social-media-section-start */
+.icon{
+    width: 50px;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 1;
+    margin-left: 20px;
+    line-height: 40px;
+  
+}
+/* social-media-section-end */
+@media only screen and (max-width: 700px) {
+ .footer-row{
+     display: block;
+ }
+ 
+ 
+}
