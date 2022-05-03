@@ -1,0 +1,13 @@
+.full-banner{
+    background-image: url('../../../asset/banner.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    height: 600px;
+   
+}
+.banner-text{
+   color: #8D3DAF;
+}
+.banner-title{
+    font-size: 60px;
+}
