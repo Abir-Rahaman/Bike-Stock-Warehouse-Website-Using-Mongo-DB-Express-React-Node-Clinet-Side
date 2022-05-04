@@ -14,7 +14,7 @@ const BikeDetails = ({bike}) => {
             <p className='fw-bolder text-center '> Quantity :{quantity} </p>
             <p className='fw-bolder text-center '> Supplier Name :{SupplierName} </p>
             <p className="card-text fw-bolder text-center "><span className='banner '> Information:</span>  <br />{descrioption} </p>
-            <Link to='/checkout'><button className="btn btn-outline-danger ms-3 mt-4 fw-bolder fs-6 px-5 py-2 rounded-pill m-auto" type="submit"> Update </button> </Link>
+            <Link to='/inventory'><button className="btn btn-outline-danger ms-3 mt-4 fw-bolder fs-6 px-5 py-2 rounded-pill m-auto" type="submit"> Update </button> </Link>
             
         </div>
         </div>

@@ -2,8 +2,12 @@ import React from 'react';
 import './Navbar.css'
 import { Link } from 'react-router-dom';
 import logo from '../../asset/logo.png'
+import { useAuthState} from 'react-firebase-hooks/auth';
+import { signOut } from 'firebase/auth';
+import auth from '../../firebase.init';
 
 const Navbar = () => {
+    const [user] = useAuthState(auth)
     return (
         <nav className="navbar navbar-expand-lg navbar-light">
             <div className="container">
@@ -24,7 +28,13 @@ const Navbar = () => {
                     </li>
                </ul>
               
+               <span className='text-white pe-2 outline-danger '> {user?.displayName && user.displayName} </span>
+               {
+                   user?.uid ?
+                    <Link to='/login'> <button onClick={() => signOut(auth)} className="btn btn-outline-dark px-5 py-2 rounded-pill fw-bolder" type="submit"> Sign Out </button> </Link>
+                    : 
                     <Link to='/login'> <button className="btn btn-outline-dark px-5 py-2 rounded-pill fw-bolder" type="submit">Log In</button> </Link>
+               }
             
             
       </div>

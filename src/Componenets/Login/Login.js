@@ -8,21 +8,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons'
 import login from '../../asset/login.png'
 import loginBanner from '../../asset/login-banner.png'
+import { sendPasswordResetEmail } from 'firebase/auth';
 
 
 
 const Login = () => {
     const [signInWithGoogle] = useSignInWithGoogle(auth);
     const [signInWithEmailAndPassword,user,error,loading] = useSignInWithEmailAndPassword(auth);
-    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
     const location =useLocation();
     const emailRef = useRef('')
-    const passwordRef=useRef('')
+
 
 
     const [email , setEmail] = useState('')
     const [password , setPassword] = useState('')
-    let from = location.state?.from?.pathname || "/";
+    let from = location?.state?.from?.pathname || "/";
+    
 
     const handleEmail = event =>{
         setEmail(event.target.value)
@@ -39,7 +40,6 @@ const Login = () => {
     if(user){
         navigate(from, { replace: true });
     }
-
     const resetPassword = async() => {
         const email = emailRef.current.value;
         await sendPasswordResetEmail(email)
@@ -57,6 +57,8 @@ const Login = () => {
         }
 
     }
+
+   
     
     return (
        <div className="row">
@@ -66,7 +68,7 @@ const Login = () => {
            </div>
            <div className="col-md-8">
            <div className="login-banner mt-5">
-        <form onSubmit={handleSignIn} className='w-25 mx-auto mt-5' >
+        <form onSubmit={handleSignIn} className='w-50 mx-auto mt-5' >
         <img className='w-75' src={login} alt="" />
             <div className="mb-3">
                 
@@ -82,6 +84,10 @@ const Login = () => {
 
 
             <div className=" mb-3 ">
+            <div className="ms-5 ps-5">
+                <button onClick={resetPassword} className=' btn btn-link'><small>  Reset password ? </small> </button>
+                <button onClick={forgotPassword} className=' btn btn-link' > <small> Forgot Password ? </small> </button>
+                </div>
                 <Link className='text-decoration-none d-block mt-3 text-center text-success fw-bolder' to='/signin'> New? Create An Account </Link> 
             </div>  
             <button type="submit" className="btn btn-outline-success d-block mx-auto px-5 fw-bolder fs-5"> Log In</button>
