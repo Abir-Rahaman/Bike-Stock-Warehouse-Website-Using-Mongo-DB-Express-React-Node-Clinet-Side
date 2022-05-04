@@ -1,11 +1,12 @@
 import React from 'react';
 import { Accordion } from 'react-bootstrap';
 import superBike from '../../../asset/superbike.jpg'
+import './Events.css'
 
 const Events = () => {
     return (
         <div className='mt-5 pt-5'>
-            <h1 className='banner-title text-center fw-bolder text-danger'>  Super Bike Stock List 2022 </h1>
+            <h2 className='banner-title text-center fw-bolder'>  <span className='banner'> Super Bike Stock List 2022 </span>  </h2>
 
 <div className="row w-75 mx-auto mt-5">
     <div className="col-md-6">

@@ -3,9 +3,9 @@ import './Footer.css'
 
 const Footer = () => {
     return (
-        <div>
-            <section className="footer mt-5 pt-5 ">
-        <div className="conteinar footer-row bg-dark p-5">
+        <div className='footer-section mt-5'>
+            <section className="footer ">
+        <div className=" footer-row p-5">
         
         <div className="product">
             <h3 className="orange">Our Product</h3>
@@ -42,7 +42,7 @@ const Footer = () => {
 
         </div>
         <div>
-            <button className="btn btn-outline-danger fw-bolder fs-5 px-5 py-3 mt-5 " type="submit"> See Products </button>
+            <button className="btn btn-outline-dark fw-bolder fs-5 px-5 py-3 mt-5 " type="submit"> See Products </button>
         </div>
     </div>
     </section>

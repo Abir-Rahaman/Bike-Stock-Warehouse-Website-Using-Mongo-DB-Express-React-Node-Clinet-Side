@@ -1,10 +1,15 @@
+.footer-section{
+    background-color:#b769d8;
+    margin-top: 4%;
+
+}
 .footer-row{
-    margin-top: 3%;
+    
     display: flex;
     justify-content: space-between;
     } 
 .orange{
-    color: palevioletred;
+    color: black;
     margin-bottom: 10px;
 }
 .mail{
@@ -12,6 +17,7 @@
 }
 #footer-buton{
     margin-top: 20px;
+    
 }
 .product{
     
