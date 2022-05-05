@@ -25,6 +25,7 @@ const Inventory = () => {
                         <h5 className='fw-bolder '> Quantity :{bikes.quantity} </h5>
                         <h5 className='fw-bolder '> Supplier Name :{bikes.SupplierName} </h5>
                         <h5 className="card-text fw-bolder "><span className='banner fs-3'> Information:</span>  <br />{bikes.descrioption} </h5>
+                        <button className="btn btn-outline-dark mt-4 fw-bolder fs-6 px-5 py-2 m-auto" type="submit"> Delivered </button>  
 
             </div>
         </div>

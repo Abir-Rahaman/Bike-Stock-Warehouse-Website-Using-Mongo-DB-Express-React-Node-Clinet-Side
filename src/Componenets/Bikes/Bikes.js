@@ -1,14 +1,9 @@
-import React, { useEffect, useState } from 'react';
 import BikeDetails from '../BikeDetails/BikeDetails';
 import './Bikes.css'
+import useBikes from './../hooks/useBikes';
 
 const Bikes = () => {
-    const [bikes,setBikes] = useState([]);
-    useEffect(()=>{
-        fetch("http://localhost:5000/bikes")
-        .then(res => res.json())
-        .then(data => setBikes(data));
-    },[])
+    const {bikes} = useBikes()
     return (
         <div>
         <h1 className='text-center  fw-bolder mt-5 pt-5' > <span className='banner'>Some Products From Our Warehouse  </span> </h1>
