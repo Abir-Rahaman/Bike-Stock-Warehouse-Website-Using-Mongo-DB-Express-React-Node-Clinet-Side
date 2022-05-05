@@ -6,6 +6,7 @@ const Inventory = () => {
     const {id} = useParams();
     console.log(id);
     const [bikes , setBikes] = useState({});
+    // const {_id,name , img , descrioption,SupplierName, quantity , price} = bike;
     
     useEffect(()=>{
         const url=`http://localhost:5000/bikes/${id}`
@@ -14,9 +15,18 @@ const Inventory = () => {
         .then(data => setBikes(data));
     },[id]) 
     return (
-        <div>
-            <h1> got it:{bikes.name}</h1>
-           
+        <div className="row container pt-5 mt-5 mb-5 pb-5 mx-auto">
+            <div className="col-md-6">
+                <img className='w-100 rounded-pill' src={bikes.img} alt="" />
+            </div>
+            <div className="col-md-4 mt-5 pt-5 ms-5">
+            <h2 className="card-title  fw-bolder"> <span className='banner'> {bikes.name} </span></h2>
+                        <h5 className='fw-bolder '> Price ${bikes.price} </h5>
+                        <h5 className='fw-bolder '> Quantity :{bikes.quantity} </h5>
+                        <h5 className='fw-bolder '> Supplier Name :{bikes.SupplierName} </h5>
+                        <h5 className="card-text fw-bolder "><span className='banner fs-3'> Information:</span>  <br />{bikes.descrioption} </h5>
+
+            </div>
         </div>
     );
 };
