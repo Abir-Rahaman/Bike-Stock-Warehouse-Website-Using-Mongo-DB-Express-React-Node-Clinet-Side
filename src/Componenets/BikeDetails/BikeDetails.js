@@ -2,7 +2,13 @@ import React from 'react';
 import './BikeDetails.css'
 import { Link, useNavigate } from 'react-router-dom';
 const BikeDetails = ({bike}) => {
-    const {name , img , descrioption,SupplierName, quantity , price} = bike;
+    const navigate =useNavigate();
+    const {_id,name , img , descrioption,SupplierName, quantity , price} = bike;
+
+    
+    const navigateToUpdate = id =>{
+        navigate(`/inventory/${id}`)
+    }
     return (
         <div>
 <div className="bike-card w-75">
@@ -14,7 +20,7 @@ const BikeDetails = ({bike}) => {
             <p className='fw-bolder text-center '> Quantity :{quantity} </p>
             <p className='fw-bolder text-center '> Supplier Name :{SupplierName} </p>
             <p className="card-text fw-bolder text-center "><span className='banner '> Information:</span>  <br />{descrioption} </p>
-            <Link to='/inventory'><button className="btn btn-outline-danger ms-3 mt-4 fw-bolder fs-6 px-5 py-2 rounded-pill m-auto" type="submit"> Update </button> </Link>
+            <button onClick={()=>navigateToUpdate(_id)} className="btn btn-outline-danger ms-3 mt-4 fw-bolder fs-6 px-5 py-2 rounded-pill m-auto" type="submit"> Update </button>
             
         </div>
         </div>

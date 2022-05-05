@@ -60,7 +60,7 @@ const SignIn = () => {
 
                  <div className="signup-banner mt-5">
                      
-        <form onSubmit={handleCreateUser} className='w-25 mx-auto pt-5' >
+        <form onSubmit={handleCreateUser} className='w-50 mx-auto pt-5' >
         <img className='w-75' src={login} alt="" />
             <div className="mb-3">
                 <label for="exampleInput" className="form-label text-success fw-bolder"> Your Name</label>
