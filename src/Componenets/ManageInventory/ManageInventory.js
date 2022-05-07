@@ -6,11 +6,29 @@ import { Link } from 'react-router-dom';
 
 const ManageInventory = () => {
     const[bikes , setBikes] = useState([]);
+    const [rests , setRests] = useState({});
     useEffect(()=>{
         fetch("http://localhost:5000/manageInventory")
         .then(res => res.json())
         .then(data => setBikes(data));
     },[])
+    const handleUserDelete = id =>{
+        console.log("delete" , id);
+        const procced = window.confirm("Are You Sure")
+        if(procced){
+            const url =`http://localhost:5000/manageInventory/${id}`
+            fetch(url,{
+                method:"DELETE"
+            })
+            .then(res => res.json())
+            .then(data => {
+                // if(data.deletedCount > 0){
+                  const remain = rests.filter(rest => rest._id !== id)
+                  setRests(remain);
+                // }
+            })
+        }
+    }
 
     
     return (
@@ -22,7 +40,7 @@ const ManageInventory = () => {
         <div className="bike-section mt-5 ps-5 ms-5">
            {
                
-                bikes.map(bike => <InventoryDetails key={bike._id} bike={bike}>h </InventoryDetails>   )
+                bikes.map(bike => <InventoryDetails key={bike._id} handleUserDelete={handleUserDelete} bike={bike}></InventoryDetails>   )
             }
         </div>
         </div>

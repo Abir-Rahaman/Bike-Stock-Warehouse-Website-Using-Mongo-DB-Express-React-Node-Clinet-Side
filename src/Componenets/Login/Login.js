@@ -23,7 +23,10 @@ const Login = () => {
     const [email , setEmail] = useState('')
     const [password , setPassword] = useState('')
     let from = location?.state?.from?.pathname || "/";
-    
+    const Google = () =>{
+        signInWithGoogle();
+        navigate("/home")
+    }
 
     const handleEmail = event =>{
         setEmail(event.target.value)
@@ -80,7 +83,7 @@ const Login = () => {
                 <label for="exampleInputPassword1" className="form-label text-success fw-bolder">Password</label>
                 <input onBlur={handlePassword} type="password" className="form-control" required id="exampleInputPassword1"/>
             </div>
-            <button onClick={() =>signInWithGoogle()}  className="btn d-block mx-auto border border-outline-success px-5 fw-bolder "> <FontAwesomeIcon icon={faArrowAltCircleLeft} />  Google Sign  </button>   
+            <button onClick={() =>Google()}  className="btn d-block mx-auto border border-outline-success px-5 fw-bolder "> <FontAwesomeIcon icon={faArrowAltCircleLeft} />  Google Sign  </button>   
 
 
             <div className=" mb-3 ">
