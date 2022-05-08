@@ -24,7 +24,7 @@ const Navbar = () => {
                     <Link className="nav-link active text-white fw-bolder fs-5 nav-section" aria-current="page" to='/manageInventory' >ManageInventory</Link>
                     </li>
                     <li className="nav-item">
-                    <Link className="nav-link active text-white fw-bolder fs-5 nav-section" aria-current="page" to='/blogs'>Blogs</Link>
+                    <Link className="nav-link active text-white fw-bolder fs-5 nav-section" aria-current="page" to='/Blog'>Blogs</Link>
                     </li>
                     <li className="nav-item">
                     <Link className="nav-link active text-white fw-bolder fs-5 nav-section" aria-current="page" to='/addItem'>Add Item</Link>
