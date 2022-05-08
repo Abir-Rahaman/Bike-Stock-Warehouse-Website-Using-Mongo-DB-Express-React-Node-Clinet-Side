@@ -22,10 +22,12 @@ const Login = () => {
 
     const [email , setEmail] = useState('')
     const [password , setPassword] = useState('')
-    let from = location?.state?.from?.pathname || "/";
+    let from = location.state?.from?.pathname || "/";
     const Google = () =>{
         signInWithGoogle();
-        navigate("/home")
+        if(user){
+            navigate(from, { replace: true });
+        }
     }
 
     const handleEmail = event =>{
@@ -38,11 +40,7 @@ const Login = () => {
         event.preventDefault();
         signInWithEmailAndPassword(email, password)
     }
-    const navigate = useNavigate();
     
-    if(user){
-        navigate(from, { replace: true });
-    }
     const resetPassword = async() => {
         const email = emailRef.current.value;
         await sendPasswordResetEmail(email)
@@ -59,6 +57,11 @@ const Login = () => {
             toast("enter your email")
         }
 
+    }
+    const navigate = useNavigate();
+    
+    if(user){
+        navigate(from, { replace: true });
     }
 
    

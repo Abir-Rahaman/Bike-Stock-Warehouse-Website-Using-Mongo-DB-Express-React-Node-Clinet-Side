@@ -5,10 +5,10 @@ const InventoryDetails = ({bike,handleUserDelete}) => {
     const {_id,name,img,descrioption,SupplierName,quantity,price} = bike;
     const [rests,setRests] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/manageInventory')
+        fetch('https://tranquil-forest-45892.herokuapp.com/manageInventory')
         .then(res => res.json())
         .then(data => setRests(data))
-    },[])
+    },[rests])
     
 
     return (

@@ -9,7 +9,7 @@ const Inventory = () => {
     const [isReload,setReload] = useState(false)
     // const {_id,name , img , descrioption,SupplierName, quantity , price} = bike;
     useEffect(()=>{
-        const url=`http://localhost:5000/manageInventory/${id}`
+        const url=`https://tranquil-forest-45892.herokuapp.com/manageInventory/${id}`
         fetch(url)
         .then(res => res.json())
         .then(data => setBikes(data));
@@ -25,7 +25,7 @@ const Inventory = () => {
             alert("added")
         }
         else{
-            const url=`http://localhost:5000/products/${id}`
+            const url=`https://tranquil-forest-45892.herokuapp.com/products/${id}`
             fetch(url,{
                 method:"PUT",
                 headers: {
@@ -45,7 +45,7 @@ const Inventory = () => {
     const deliverHandle = e =>{
         const quantity = bikes?.quantity;
         const updateDeliver= {quantity};
-            const url=`http://localhost:5000/delivery/${id}`
+            const url=`https://tranquil-forest-45892.herokuapp.com/delivery/${id}`
             fetch(url,{
                 method:"PUT",
                 headers: {
@@ -90,10 +90,8 @@ const Inventory = () => {
                         
                            <form onSubmit={handleSubmit}>
                            <input type="text" name='quantity' class="form-control" placeholder='Add Quantity' id="exampleInputEmail1" aria-describedby="emailHelp" />
-                           <input type="submit" value="submit" />
+                           <button className="btn btn-outline-dark mt-4 fw-bolder px-3 py-1 m-auto" type="submit"> Restock  </button> 
                            </form>  
-                        
-                        <button className="btn btn-outline-dark mt-4 fw-bolder px-3 py-1 m-auto" type="submit"> Restock  </button> 
                         </div>
                         </div>
 

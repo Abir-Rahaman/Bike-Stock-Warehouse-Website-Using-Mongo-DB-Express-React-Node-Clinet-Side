@@ -30,7 +30,7 @@ const Navbar = () => {
                     <Link className="nav-link active text-white fw-bolder fs-5 nav-section" aria-current="page" to='/addItem'>Add Item</Link>
                     </li>
                     <li className="nav-item">
-                    <Link className="nav-link active text-white fw-bolder fs-5 nav-section" aria-current="page" to='/about' >About</Link>
+                    <Link className="nav-link active text-white fw-bolder fs-5 nav-section" aria-current="page" to='/myItems' >My Items</Link>
                     </li>
                </ul>
               
@@ -38,6 +38,7 @@ const Navbar = () => {
                {
                    user?.uid ?
                     <Link to='/login'> <button onClick={() => signOut(auth)} className="btn btn-outline-dark px-5 py-2 rounded-pill fw-bolder" type="submit"> Sign Out </button> </Link>
+                    
                     : 
                     <Link to='/login'> <button className="btn btn-outline-dark px-5 py-2 rounded-pill fw-bolder" type="submit">Log In</button> </Link>
                }
