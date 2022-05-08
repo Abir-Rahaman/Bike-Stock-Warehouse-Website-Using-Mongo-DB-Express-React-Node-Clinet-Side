@@ -11,6 +11,7 @@ import ManageInventory from './Componenets/ManageInventory/ManageInventory';
 import AddItem from './Componenets/AddItem/AddItem';
 import MyItems from './Componenets/MyItems/MyItems';
 import NotFound from './Componenets/NotFound/NotFound';
+import Blog from './Componenets/Blogs/Blog';
 
 
 
@@ -27,6 +28,7 @@ function App() {
        <Route path='/addItem' element={<RequireAuth><AddItem></AddItem></RequireAuth>}></Route>    
        <Route path='/myItems' element={<RequireAuth><MyItems></MyItems></RequireAuth>}></Route>    
        <Route path='/login' element={<Login></Login>} >  </Route>  
+       <Route path='/Blog' element={<Blog></Blog>} >  </Route>  
        <Route path='/signin' element={<SignIn></SignIn>} >  </Route>  
        <Route path="*" element={<NotFound></NotFound> } ></Route>
       </Routes>
