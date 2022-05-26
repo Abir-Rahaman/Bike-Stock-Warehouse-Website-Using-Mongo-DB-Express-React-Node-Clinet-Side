@@ -64,3 +64,9 @@ You're about to initialize a Firebase project in this directory:
     at processTicksAndRejections (internal/process/task_queues.js:95:5)
 [error] 
 [error] Error: Failed to list Firebase projects. See firebase-debug.log for more info.
+[debug] [2022-05-08T18:09:35.769Z] Error: kill ENOSYS
+    at process.kill (internal/process/per_thread.js:200:13)
+    at process.listener (C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\signal-exit\index.js:95:15)
+    at process.emit (events.js:376:20)
+[error] 
+[error] Error: An unexpected error has occurred.

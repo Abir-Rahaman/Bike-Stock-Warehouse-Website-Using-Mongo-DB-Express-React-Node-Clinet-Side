@@ -9,7 +9,6 @@ const AddItem = () => {
     const [user] = useAuthState(auth)
     const handleInsert = event =>{
         event.preventDefault();
-       
         const img = event.target.img.value;
         const name = event.target.name.value;
         const price = event.target.price.value;
@@ -18,6 +17,8 @@ const AddItem = () => {
         const description = event.target.description.value;
 
         const products = {img,name,price,quantity,supplierName,description};
+        // console.log(products);
+        
 
         fetch("https://tranquil-forest-45892.herokuapp.com/manageInventory",{
             method:"POST",
